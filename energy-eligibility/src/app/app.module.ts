@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { PersonalInfoComponent } from './modules/personal-info/personal-info.component';
 import { ProjectInfoComponent } from './modules/project-info/project-info.component';
 import { SummaryComponent } from './modules/summary/summary.component';
+import { ManageFormService } from './services/manage-form-service';
+import { EligibilityService } from './services/eligibility-service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { SummaryComponent } from './modules/summary/summary.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [    
+    ManageFormService,
+    EligibilityService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
