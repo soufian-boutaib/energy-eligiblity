@@ -1,0 +1,35 @@
+.personal-info {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    margin-bottom: 10px;
+  }
+  
+  .is-invalid {
+    border-color: red;
+  }
+  
+  .dropdown {
+    width: 103%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f8f8f8;
+    transition: border .3s ease;
+    margin-bottom: 15px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  
+  .dropdown:hover {
+    border-color: #2b2b2b;
+  }
+  
+  .dropdown:focus {
+    border-color: #2b2b2b;
+    outline: none;
+  }
+  

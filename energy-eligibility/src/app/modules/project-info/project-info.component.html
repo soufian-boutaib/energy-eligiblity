@@ -1,1 +1,99 @@
-<p>project-info works!</p>
+<div class="project-info">
+    <form (ngSubmit)="next()" [formGroup]="form">
+      <h2>Informations projet</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="ownership">Propriété :</label>
+          <select
+            formControlName="ownership"
+            id="ownership"
+            required
+            class="dropdown"
+          >
+            <option
+              *ngFor="let ownershipChoice of ownershipChoices"
+              [value]="ownershipChoice"
+            >
+              {{ ownershipChoice }}
+            </option>
+          </select>
+          <div
+            *ngIf="submitted && form.get('ownership')?.invalid"
+            class="text-danger"
+          >
+            La propriété est obligatoire.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>
+            Nombre de personnes dans le foyer :
+            <input
+              type="number"
+              formControlName="numberOfPeople"
+              required
+              [ngClass]="{
+                'is-invalid': submitted && form.get('numberOfPeople')?.invalid,
+                'is-valid': submitted && form.get('numberOfPeople')?.valid
+              }"
+            />
+          </label>
+          <div
+            *ngIf="submitted && form.get('numberOfPeople')?.invalid"
+            class="text-danger"
+          >
+            Le nombre de personnes est obligatoire.
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6">
+          <label>
+            Revenu du foyer :
+            <input
+              type="text"
+              formControlName="householdIncome"
+              [ngClass]="{
+                'is-invalid': submitted && form.get('householdIncome')?.invalid,
+                'is-valid': submitted && form.get('householdIncome')?.valid
+              }"
+            />
+          </label>
+          <ng-container *ngIf="form.get('householdIncome') as incomeCtrl">
+            <div *ngIf="submitted && incomeCtrl.errors" class="text-danger">
+              <div *ngIf="incomeCtrl.errors['required']">
+                Le revenu du foyer est obligatoire.
+              </div>
+              <div *ngIf="incomeCtrl.errors['min']">
+                Le revenu du foyer doit être supérieur à 10 000.
+              </div>
+              <div *ngIf="incomeCtrl.errors['max']">
+                Le revenu du foyer doit être inférieur à 100 000.
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6">
+          <label>
+            Superficie (m2) :
+            <input
+              type="number"
+              formControlName="area"
+              required
+              [ngClass]="{
+                'is-invalid': submitted && form.get('area')?.invalid,
+                'is-valid': submitted && form.get('area')?.valid
+              }"
+            />
+          </label>
+          <div *ngIf="submitted && form.get('area')?.invalid" class="text-danger">
+            La superficie est obligatoire.
+          </div>
+        </div>
+      </div>
+      <button type="submit">Tester mon éligibilité</button>
+    </form>
+  </div>

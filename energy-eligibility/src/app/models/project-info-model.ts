@@ -1,7 +1,7 @@
 
 export enum OwnershipEnum {
-    Owner = 'Owner',
-    Tenant = 'Tenant'
+    Owner = 'Propriétaire',
+    Tenant = 'Locataire'
 }
 
 export type ProjectInfo = {
