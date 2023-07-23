@@ -8,6 +8,7 @@ import { ProjectInfoComponent } from './modules/project-info/project-info.compon
 import { SummaryComponent } from './modules/summary/summary.component';
 import { ManageFormService } from './services/manage-form-service';
 import { EligibilityService } from './services/eligibility-service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EligibilityService } from './services/eligibility-service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [    
     ManageFormService,

@@ -1,0 +1,9 @@
+.first-row {
+    display: flex;
+    gap: 1.5em;
+    align-content: center;
+}
+
+.form-check {
+    display: flex;
+}
