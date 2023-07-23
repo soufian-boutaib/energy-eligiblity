@@ -6,9 +6,9 @@ import { ProjectInfoComponent } from './modules/project-info/project-info.compon
 import { SummaryComponent } from './modules/summary/summary.component';
 
 const routes: Routes = [
-  { path: 'personal/info', component: PersonalInfoComponent, data: { breadcrumb: 'Informations personnelles' } },
-  { path: 'project/info', component: ProjectInfoComponent, data: { breadcrumb: 'Informations projets' } },
-  { path: 'summary', component: SummaryComponent, data: { breadcrumb: 'Récapitulatif' } }
+  { path: 'personal/info', component: PersonalInfoComponent },
+  { path: 'project/info', component: ProjectInfoComponent },
+  { path: 'summary', component: SummaryComponent }
 ];
 
 @NgModule({
