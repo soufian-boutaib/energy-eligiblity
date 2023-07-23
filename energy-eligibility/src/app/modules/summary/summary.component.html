@@ -1,1 +1,18 @@
-<p>summary works!</p>
+<div class="summary">
+  <h2>Récapitulatif</h2>
+  <div *ngIf="personalInfo && projectInfo">
+    <p>Merci {{ personalInfo.civility }} {{ personalInfo.lastName }} {{ personalInfo.firstName }}</p>
+    <div *ngIf="isEligible">
+        <p>Félicitations ! Vous êtes éligible.</p>
+        <p>Vous avez droit à une aide Effy de {{ effyAidAmount }}€.</p>
+    </div>
+    <div *ngIf="!isEligible">
+        <p>Nous sommes désolés, vous n'êtes pas éligible pour notre programme pour le moment.</p>
+    </div>
+    <div class="edit-buttons">
+        <hr/>
+      <button (click)="goToPersonalInfo()">Modifier les informations personnelles</button><hr/>
+      <button (click)="goToProjectInfo()">Modifier les informations du projet</button><hr/>
+    </div>
+  </div>
+</div>

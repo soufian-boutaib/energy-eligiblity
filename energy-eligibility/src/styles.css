@@ -18,6 +18,10 @@ form {
     margin: 0 auto;
 }
 
+a {
+    cursor: pointer
+}
+
 h2 {
     margin-bottom: 20px;
     color: #333;
