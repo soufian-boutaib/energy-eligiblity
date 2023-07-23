@@ -1,1 +1,64 @@
-<p>personal-info works!</p>
+<div class="personal-info">
+    <form (ngSubmit)="next()" [formGroup]="form">
+        <h2>Informations personnelles</h2>
+
+        <div class="col">
+            <div class="first-row">
+                <label for="civility">Civilité : </label>
+                <div *ngFor="let civilityChoice of civilityChoices" class="form-check form-check-inline">
+                    <label class="form-check-label">{{ civilityChoice }}</label>
+                    <input type="radio" formControlName="civility" [value]="civilityChoice" required
+                        class="form-check-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="col-md-6">
+                <label>
+                    Prénom :
+                    <input type="text" formControlName="firstName" required
+                        [ngClass]="{ 'is-invalid': submitted && form.get('firstName')?.invalid }">
+                    <div *ngIf="submitted && form.get('firstName')?.invalid" class="text-danger">
+                        Le prénom est obligatoire.
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-6">
+                <label>
+                    Nom :
+                    <input type="text" formControlName="lastName" required
+                        [ngClass]="{ 'is-invalid': submitted && form.get('lastName')?.invalid }">
+                    <div *ngIf="submitted && form.get('lastName')?.invalid" class="text-danger">
+                        Le nom est obligatoire.
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="col-md-6">
+                <label>
+                    Email :
+                    <input type="email" formControlName="email" required
+                        [ngClass]="{ 'is-invalid': submitted && form.get('email')?.invalid }">
+                    <div *ngIf="submitted && form.get('email')?.invalid" class="text-danger">
+                        L'adresse email est obligatoire.
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-6">
+                <label>
+                    Téléphone :
+                    <input type="tel" formControlName="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        [ngClass]="{ 'is-invalid': submitted && form.get('phone')?.invalid }">
+                    <div *ngIf="submitted && form.get('phone')?.invalid" class="text-danger">
+                        Merci de saisir un numéro de téléphone valide (ex., 123-456-7890).
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <button type="submit">Suivant</button>
+    </form>
+</div>
