@@ -1,0 +1,10 @@
+<a (click)="goToHome()"><b>Accueil</b></a>
+<hr/>
+    
+<div *ngIf="isHomeRoute" class="main-content">
+    <h3>Bienvenue à notre programme d'éligibilité</h3>
+    <p>Vous pouvez tester votre éligibilité énérgitique maintenant</p>
+    <button class="button" routerLink="/personal/info">Déarrer le test d'éligibilité</button>
+</div>
+
+<router-outlet></router-outlet>
