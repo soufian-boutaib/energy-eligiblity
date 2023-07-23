@@ -1,9 +1,13 @@
 # energy-eligiblity
 
+# Démonstration
+![eligibility](https://github.com/soufian-boutaib/energy-eligiblity/assets/85968553/2df3df25-66ac-4682-bd0a-9042609a923e)
+
 Une WebApp / formulaire qui permettrait à un futur client de pouvoir renseigner les 
 informations nécessaires à l’examen de son projet et ensuite d’afficher une estimation des 
 aides et de l’accompagnement possible.
 Cette WebApp Angular présentera un parcours de 3 pages
+
 La première : les informations personnelles suivantes devront être saisies par l’utilisateur:
 • civilité
 • Nom
